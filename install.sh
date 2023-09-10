@@ -114,6 +114,37 @@ if ! python3 -c "import venv" 2>/dev/null; then
   fi
 fi
 
+# Check if java is installed
+
+echo "Checking if java is installed..."
+
+if ! [ -x "$(command -v java)" ]; then
+  echo 'Error: java is not installed.' >&2
+   # ask for confirmation to install java
+
+    read -p "Do you want to install java? (y/n)" -n 1 -r
+    echo    # (optional) move to a new line
+    if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then
+    	echo "Exiting..."
+        exit 1
+    fi
+
+    echo 'Installing open java...'
+
+    apt-get install openjdk-7-jre
+
+    # check which version of java is installed
+
+    echo "Checking java version..."
+
+    if java -version 2>&1 | grep -q '1.7'; then
+        echo correct version of java installed
+    else
+        echo "Error: wrong version of java installed. Please install java 1.7"
+        exit 1
+    fi
+fi
 
 # make sure we are in the right directory
 

@@ -50,7 +50,7 @@ run `./install.sh` to install the program after cloning the repo to your local m
 
 ## Usage
 
-inteded to be used with a linux system with ssh installed
+intended to be used with a linux system with ssh installed
 
 ## Contributing
 

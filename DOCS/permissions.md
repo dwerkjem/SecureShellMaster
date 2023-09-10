@@ -32,9 +32,9 @@ Users can freely execute commands from a pre-approved list. Each execution is lo
 
 Commands can only be executed if certain conditions are met, like system metrics or the status of other system services.
 
-## 9. Geo-Restricted Authorization (GRA)
+## 9. IP-Restricted Authorization (IpRA)
 
-Commands can only be executed from certain IP addresses or geographical locations.
+Commands can only be executed from certain IP addresses.
 
 ## 10. Chain-of-Command Authorization (CoCA)
 
