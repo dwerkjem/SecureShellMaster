@@ -46,11 +46,11 @@ Visit our [website](https://derekrnai.com) for more information.
 
 ## Installation
 
-(Insert installation steps here)
+run `./install.sh` to install the program after cloning the repo to your local machine with `git clone https://github.com/dwerkjem/SecureShellMaster.git`.
 
 ## Usage
 
-(Insert usage examples and code snippets here)
+inteded to be used with a linux system with ssh installed
 
 ## Contributing
 
