@@ -1,8 +1,8 @@
-# SecureCommander
+# SecureShellMaster
 
 ## Overview
 
-SecureCommander is a robust command execution management system designed to provide granular control over who can execute what commands on a multi-user system. With a focus on security and flexibility, SecureCommander is ideal for environments where different users have varying levels of expertise and responsibility.
+SecureShellMaster is a robust command execution management system designed to provide granular control over who can execute what commands on a multi-user system. With a focus on security and flexibility, SecureShellMaster is ideal for environments where different users have varying levels of expertise and responsibility.
 
 ## Features
 
@@ -31,7 +31,7 @@ SecureCommander is a robust command execution management system designed to prov
 14. **Context-Sensitive Authorization (CSA)**
 15. **AI Filtering (AIF)**
 
-See [permissions.md](permissions.md) for more details.
+See [permissions.md](DOCS/permissions.md) for more details.
 
 ## Security Considerations
 
@@ -54,7 +54,7 @@ Visit our [website](https://derekrnai.com) for more information.
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for more details.
+We welcome contributions! Please see our [Contributing Guidelines](DOCS/CONTRIBUTING.md) for more details.
 
 ## License
 
@@ -62,7 +62,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## AI Filtering
 
-SecureCommander incorporates advanced AI algorithms to enhance its command filtering capabilities. This feature allows the system to:
+SecureShellMaster incorporates advanced AI algorithms to enhance its command filtering capabilities. This feature allows the system to:
 
 - **Predictive Analysis**: Anticipate unauthorized or dangerous command attempts based on historical data.
 - **Contextual Awareness**: Understand the context in which a command is being executed, improving the accuracy of its permission evaluations.

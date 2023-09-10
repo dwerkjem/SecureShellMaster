@@ -1,4 +1,4 @@
-# Contributing to SecureCommander
+# Contributing to SecureShellMaster
 
 ## How to Contribute
 
@@ -13,7 +13,7 @@ Fork the project repository by clicking on the 'Fork' button at the top right co
 Clone your forked repository to your local machine.
 
 ```bash
-git clone https://github.com/[YourUsername]/SecureCommander.git
+git clone https://github.com/[YourUsername]/SecureShellMaster.git
 ```
 
 ### Step 3: Create a New Branch
@@ -65,4 +65,4 @@ Feel free to join our community channels for discussions and updates.
 
 By contributing to this project, you agree that your contributions will be licensed under the same license used by the project.
 
-Thank you for contributing to SecureCommander!
+Thank you for contributing to SecureShellMaster!
