@@ -29,6 +29,9 @@ SecureCommander is a robust command execution management system designed to prov
 12. **Audit-Only Authorization (AOA)**
 13. **Revocable Authorization (RA)**
 14. **Context-Sensitive Authorization (CSA)**
+15. **AI Filtering (AIF)**
+
+See [permissions.md](permissions.md) for more details.
 
 ## Security Considerations
 
@@ -36,6 +39,10 @@ SecureCommander is a robust command execution management system designed to prov
 - **Authorization**: Only admins have the ability to approve or deny requests.
 - **Logging**: All actions are logged for auditing purposes.
 - **Secure Channels**: Utilizes encrypted channels for all communications.
+
+## Web Site
+
+Visit our [website](https://derekrnai.com) for more information.
 
 ## Installation
 

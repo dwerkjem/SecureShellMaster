@@ -55,3 +55,8 @@ Permission can be granted but is easy to revoke if needed.
 ## 14. Context-Sensitive Authorization (CSA)
 
 Commands are allowed or disallowed based on the current system context, such as during certain system states or when certain applications are running.
+
+## 15. AI Filtering (AIF)
+
+AI is used to filter out commands that are likely to be malicious or dangerous. i.e. `rm -rf /` and `sudo rm -rf /` are both blocked on all permissions by default. and other commands will notify the admin that they are deemed potentially dangerous by the AI this could be before or after execution depending on how dangerous it is deemed.
+Beneficial for an extra layer of security, particularly against both known and emerging threats.
