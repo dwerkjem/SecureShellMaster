@@ -58,7 +58,7 @@ We welcome contributions! Please see our [Contributing Guidelines](DOCS/CONTRIBU
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the SecureShellMaster Commercial Limit License (SSMCLL). See the [LICENSE](LICENSE) file for details.
 
 ## AI Filtering
 
