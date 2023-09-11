@@ -2,13 +2,6 @@
 
 # Install script for SecureShellMaster (SSM)
 
-# Check if user is root
-
-if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root"
-   exit 1
-fi
-
 # Check what package manager is installed and os version
 
 echo "Checking OS..."
