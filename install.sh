@@ -159,8 +159,6 @@ fi
 
 echo "Creating virtual environment..."
 
-# do you want to name the virtual environment? if not, use default name if not ansered in 10 seconds, use default name
-
 # check if a virtual environment is already installed by searching for the pyvenv.cfg file with a depth of 2
 
 if ! find . -maxdepth 2 -name 'pyvenv.cfg' | grep -q 'pyvenv.cfg'; then
@@ -195,5 +193,11 @@ if ! find . -maxdepth 2 -name 'pyvenv.cfg' | grep -q 'pyvenv.cfg'; then
 else
     echo "Virtual environment already installed. Skipping..."
 fi
+
+# install python dependencies
+
+echo "Installing python dependencies..."
+
+pip3 install -r lib/install/requirements.txt
 
 echo "DONE!"

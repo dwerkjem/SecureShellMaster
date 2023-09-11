@@ -13,7 +13,7 @@ Fork the project repository by clicking on the 'Fork' button at the top right co
 Clone your forked repository to your local machine.
 
 ```bash
-git clone https://github.com/[YourUsername]/SecureShellMaster.git
+git clone https://github.com/dwerkjem/SecureShellMaster.git
 ```
 
 ### Step 3: Create a New Branch
@@ -33,36 +33,22 @@ git add .
 git commit -m "Add new feature"
 ```
 
-### Step 5: Push Changes
+### Step 5: Make Dependencies Up-to-date
 
-Push your changes to your forked repository.
+Make sure that all the dependencies are up-to-date.
+
+```bash
+./DEV/buildDeps.sh
+```
+
+### Step 6: Push Changes
+
+Push your changes to the remote repository.
 
 ```bash
 git push origin feature/new-feature
 ```
 
-### Step 6: Create a Pull Request
+### Step 7: Create a Pull Request
 
-Create a pull request from your forked repository to the original repository.
-
-## Code Style
-
-Please adhere to the coding standards and guidelines defined in the project.
-
-## Reporting Bugs
-
-Please create an issue in the issue tracker describing the bug in detail.
-
-## Suggesting Features
-
-Feature requests are welcome! Please create an issue in the issue tracker describing the feature.
-
-## Community
-
-Feel free to join our community channels for discussions and updates.
-
-## License
-
-By contributing to this project, you agree that your contributions will be licensed under the same license used by the project.
-
-Thank you for contributing to SecureShellMaster!
+Go to the repository page on GitHub and click on 'Compare & Pull Request' button. Fill in the necessary details and click on 'Create Pull Request'.
