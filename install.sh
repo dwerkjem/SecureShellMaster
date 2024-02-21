@@ -66,6 +66,9 @@ if ! [ -x "$(command -v python3)" ]; then
     	echo "Exiting..."
         exit 1
     fi
+
+    echo 'Installing python3...'
+    apt-get install python3
 fi
 
 # Check if pip3 is installed
@@ -83,6 +86,9 @@ if ! [ -x "$(command -v pip3)" ]; then
     	echo "Exiting..."
         exit 1
     fi
+
+    echo 'Installing pip3...'
+    apt-get install python3-pip
 fi
 
 # Check if python3-venv is installed
@@ -105,38 +111,34 @@ if ! python3 -c "import venv" 2>/dev/null; then
     echo "Exiting..."
     exit 1
   fi
+
+    echo 'Installing python3-venv...'
+    apt-get install python3-venv
 fi
 
-# Check if java is installed
+# Check if elasticsearch is installed
 
-echo "Checking if java is installed..."
+echo "Checking if elasticsearch is installed..."
 
-if ! [ -x "$(command -v java)" ]; then
-  echo 'Error: java is not installed.' >&2
-   # ask for confirmation to install java
+if ! [ -x "$(command -v elasticsearch)" ]; then
+  echo 'Error: elasticsearch is not installed.' >&2
+  # ask for confirmation to install elasticsearch
 
-    read -p "Do you want to install java? (y/n)" -n 1 -r
-    echo    # (optional) move to a new line
-    if [[ ! $REPLY =~ ^[Yy]$ ]]
-    then
-    	echo "Exiting..."
-        exit 1
-    fi
+  read -p "Do you want to install elasticsearch? (y/n)" -n 1 -r -t 10
+  echo    # (optional) move to a new line
 
-    echo 'Installing open java...'
+  # Set default value if empty (i.e., if timed out)
+  if [ -z "$REPLY" ]; then
+    REPLY='y'
+  fi
 
-    apt-get install openjdk-17-jre
+  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo "Exiting..."
+    exit 1
+  fi
 
-    # check which version of java is installed
-
-    echo "Checking java version..."
-
-    if java -version 2>&1 | grep -q '1.17'; then
-        echo correct version of java installed
-    else
-        echo "Error: wrong version of java installed. Please install java 1.7"
-        exit 1
-    fi
+    echo 'Installing elasticsearch...'
+    apt-get install elasticsearch-curator
 fi
 
 # make sure we are in the right directory
@@ -160,7 +162,7 @@ if ! find . -maxdepth 2 -name 'pyvenv.cfg' | grep -q 'pyvenv.cfg'; then
     if [[ ! $REPLY =~ ^[Yy]$ ]]
     then
         echo "Using default name: venv"
-        python3 -m venv venv
+        python3 -m venv .venv
 
         echo "Activating virtual environment..."
         source venv/bin/activate
