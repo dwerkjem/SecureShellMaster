@@ -40,10 +40,6 @@ See [permissions.md](DOCS/permissions.md) for more details.
 - **Logging**: All actions are logged for auditing purposes.
 - **Secure Channels**: Utilizes encrypted channels for all communications.
 
-## Web Site
-
-Visit our [website](https://derekrnai.com) for more information.
-
 ## Installation
 
 run `./install.sh` to install the program after cloning the repo to your local machine with `git clone https://github.com/dwerkjem/SecureShellMaster.git`.

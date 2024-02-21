@@ -120,25 +120,29 @@ fi
 
 echo "Checking if elasticsearch is installed..."
 
-if ! [ -x "$(command -v elasticsearch)" ]; then
-  echo 'Error: elasticsearch is not installed.' >&2
-  # ask for confirmation to install elasticsearch
+# Check if the Elasticsearch service is running
+if ! systemctl is-active --quiet elasticsearch.service; then
+	echo 'Error: Elasticsearch is not installed or not running.' >&2
 
-  read -p "Do you want to install elasticsearch? (y/n)" -n 1 -r -t 10
-  echo    # (optional) move to a new line
+	# Ask for confirmation to install Elasticsearch
+	read -p "Do you want to install Elasticsearch? (y/n)" -n 1 -r -t 10
+	echo    # (optional) Move to a new line
 
-  # Set default value if empty (i.e., if timed out)
-  if [ -z "$REPLY" ]; then
-    REPLY='y'
-  fi
+	# Set default value if empty (i.e., if timed out)
+	if [ -z "$REPLY" ]; then
+	REPLY='y'
+	fi
 
-  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    echo "Exiting..."
-    exit 1
-  fi
+	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+	echo "Exiting..."
+	exit 1
+	fi
 
-    echo 'Installing elasticsearch...'
-    apt-get install elasticsearch-curator
+	echo 'Installing Elasticsearch...'
+	wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+	echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
+	sudo apt-get update
+	sudo apt-get install elasticsearch
 fi
 
 # make sure we are in the right directory
@@ -195,5 +199,92 @@ fi
 echo "Installing python dependencies..."
 
 pip3 install -r lib/install/requirements.txt
+
+# check if elasticsearch is running
+
+echo "Checking if elasticsearch is running..."
+
+if ! systemctl is-active --quiet elasticsearch; then
+    echo "Elasticsearch is not running. Starting..."
+    systemctl start elasticsearch
+    systemctl enable elasticsearch
+else
+    echo "Elasticsearch is already running. Skipping..."
+fi
+
+# check if kibana is installed
+
+echo "Checking if Kibana is installed..."
+
+# Check if the Kibana service is installed and running
+if ! systemctl is-active --quiet kibana.service; then
+	echo 'Error: Kibana is not installed or not running.' >&2
+
+	# Ask for confirmation to install Kibana
+	read -p "Do you want to install Kibana? (y/n)" -n 1 -r -t 10
+	echo    # (optional) Move to a new line
+
+	# Set default value if empty (i.e., if timed out)
+	if [ -z "$REPLY" ]; then
+	REPLY='y'
+	fi
+
+	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+	echo "Exiting..."
+	exit 1
+	fi
+
+	echo 'Installing Kibana...'
+	apt-get install kibana
+fi
+
+# check if kibana is running
+
+echo "Checking if Kibana is running..."
+
+if ! systemctl is-active --quiet kibana; then
+	echo "Kibana is not running. Starting..."
+	systemctl start kibana
+	systemctl enable kibana
+else
+	echo "Kibana is already running. Skipping..."
+fi
+
+# check if logstash is installed
+
+echo "Checking if Logstash is installed..."
+
+if ! systemctl is-active --quiet logstash.service; then
+	echo 'Error: Logstash is not installed or not running.' >&2
+
+	# Ask for confirmation to install Logstash
+	read -p "Do you want to install Logstash? (y/n)" -n 1 -r -t 10
+	echo    # (optional) Move to a new line
+
+	# Set default value if empty (i.e., if timed out)
+	if [ -z "$REPLY" ]; then
+	REPLY='y'
+	fi
+
+	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+	echo "Exiting..."
+	exit 1
+	fi
+
+	echo 'Installing Logstash...'
+	apt-get install logstash
+fi
+
+# check if logstash is running
+
+echo "Checking if Logstash is running..."
+
+if ! systemctl is-active --quiet logstash; then
+	echo "Logstash is not running. Starting..."
+	systemctl start logstash
+	systemctl enable logstash
+else
+	echo "Logstash is already running. Skipping..."
+fi
 
 echo "DONE!"
