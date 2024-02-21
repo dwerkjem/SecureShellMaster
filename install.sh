@@ -125,13 +125,13 @@ if ! [ -x "$(command -v java)" ]; then
 
     echo 'Installing open java...'
 
-    apt-get install openjdk-7-jre
+    apt-get install openjdk-17-jre
 
     # check which version of java is installed
 
     echo "Checking java version..."
 
-    if java -version 2>&1 | grep -q '1.7'; then
+    if java -version 2>&1 | grep -q '1.17'; then
         echo correct version of java installed
     else
         echo "Error: wrong version of java installed. Please install java 1.7"
@@ -178,6 +178,7 @@ if ! find . -maxdepth 2 -name 'pyvenv.cfg' | grep -q 'pyvenv.cfg'; then
     echo 'direnv is not installed passing.' >&2
     else
     echo "Adding venv to .envrc..."
+    echo "#!/usr/bin/env bash" > .envrc
     echo "layout python3" >> .envrc
     echo "source venv/bin/activate" >> .envrc
     direnv allow
