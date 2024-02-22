@@ -8,11 +8,11 @@ Permission is granted to anyone to use this software for any purpose, subject to
 
 1. This LICENSE.txt must be included in all forks and copies of this project and must be placed in either the root directory of the project or a folder named 'DOCS', 'docs', or 'license'.
 
-2. Profit Limitation: 
+2. Profit Limitation:
     a. Users or entities generating more than $100,000 USD or equivalent in other currency per year from the use of this software are restricted to not profit more than 10% of the cost of operations. For the purpose of this license, the cost of operations includes server power cost, server rental cost, and API costs, but excludes development costs and other one-time expenses.
     b. Users or entities generating more than $100,000 USD or equivalent in other currency per year from the use of this software must seek explicit approval for profitability from Derek Neilson.
 
-3. Approval Clause: 
+3. Approval Clause:
     Profitability for individuals or companies generating more than $100,000 USD or equivalent in other currency per year must be approved by Derek Neilson. Failure to seek approval will result in the revocation of this license for such users.
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
