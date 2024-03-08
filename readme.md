@@ -36,7 +36,7 @@ See [permissions.md](DOCS/permissions.md) for more details.
 ## Security Considerations
 
 - **Authentication**: Both client and admin interfaces require secure authentication.
-- **Authorization**: Only admins have the ability to approve or deny requests.
+- **Authorization**: Only admins can approve or deny requests.
 - **Logging**: All actions are logged for auditing purposes.
 - **Secure Channels**: Utilizes encrypted channels for all communications.
 
